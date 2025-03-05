@@ -1,0 +1,33 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Faturalar
+@{
+    ViewBag.Title = "FaturalarGuncelle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h3>Fatura Güncelleme Sayfası</h3>
+<br />
+<form class="form-group" method="post">
+    @Html.HiddenFor(x=>x.FaturaID)
+    <label><h4>Fatura Seri Numarası</h4></label>
+    @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
+    <br />
+    <label><h4>Fatura Sıra Numarası</h4></label>
+    @Html.TextBoxFor(x => x.FaturaSıraNo, new { @class = "form-control" })
+    <br />
+    <label><h4>Tarih</h4></label>
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <label><h4>Vergi Dairesi</h4></label>
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+    <br />
+    <label><h4>Saat</h4></label>
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+    <br />
+    <label><h4>Teslim Eden</h4></label>
+    @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
+    <br />
+    <label><h4>Teslim Alan</h4></label>
+    @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+    <button class="btn btn-outline-primary"><i class="fade fa-save"></i>Kaydet</button>
+</form>
+

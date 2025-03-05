@@ -1,0 +1,66 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
+@model List<Urunler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h3>Ürünler</h3>
+@{
+    int count = 0;
+}
+<br />
+<!--Arama İçin-->
+@using(Html.BeginForm("Index","Urun",FormMethod.Get))
+            {
+                <p>
+                    Ürün Adı: @Html.TextBox("p")
+                    <input type="submit" value="Ara"/>
+                </p>
+            }
+<table class="table table-bordered table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>Ürün Adı</th>
+            <th>Marka</th>
+            <th>Stok</th>
+            <th>Alış Fiyatı</th>
+            <th>Satış Fiyatı</th>
+            <th>Kategori Adı</th>
+            <th>Ürün Görseli</th>
+            <th>Durum</th>
+            <th>İşlemler</th>
+            <th>Sepete At</th>
+        </tr>
+    <thead/>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.UrunAd</td>
+                <td>@item.Marka</td>
+                <td>@item.Stok</td>
+                <td>@item.AlisFiyat ₺</td>
+                <td>@item.SatisFiyat ₺</td>
+                <td>@item.Kategori.KategoriAd</td>
+                <td><img src="@item.UrunGorsel" style="height:50px; width:50px" /></td>
+
+                <td>@item.Durum</td>
+                <td>
+                    <a href="/Urun/UrunSil/@item.UrunID" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
+                    <a href="/Urun/UrunGuncelle/@item.UrunID" class="btn btn-outline-info"><i class="fa fa-recycle"></i></a>
+                </td>
+                <td>
+                    <a href="/Urun/SatisYap/@item.UrunID" class="btn btn-default" style="background-color:cornflowerblue"><i class="fa fa-shopping-basket"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a href="/Urun/UrunEkle" class="btn btn-outline-success"> Yeni Ürün Ekle</a>
+
+

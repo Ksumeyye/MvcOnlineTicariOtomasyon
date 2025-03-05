@@ -1,0 +1,29 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "SatisHareketEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Satış & Hareket Ekle</h2>
+<br />
+<form class="form-group" method="post">
+    <label><h4>Ürün Adı</h4></label>
+    @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.Urunler, "Ürünü Seçiniz", new { @class = "form-control" })
+    <br />
+    <label><h4>Cari Adı & Soyadı</h4></label>
+    @Html.DropDownListFor(x => x.Cariid, (List<SelectListItem>)ViewBag.Cariler, "Cari Adını ve Soyadını Seçiniz", new { @class = "form-control" })
+    <br />
+    <label><h4>Adet</h4></label>
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+    <br />
+    <label><h4>Fiyat</h4></label>
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+    <label><h4>Toplam Tutar</h4></label>
+    @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+    <br />
+    <label><h4>Personel Adı & Soyadı</h4></label>
+    @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.Personel, "Personel Adını ve Soyadını Seçiniz", new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary"><i class="fa fa-save"></i> Satış Yap</button>
+</form>

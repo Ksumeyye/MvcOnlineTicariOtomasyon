@@ -1,0 +1,78 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h3>Faturalar</h3>
+@{
+    int count = 0;
+    int countt = 0;
+
+}
+<br />
+<table class="table table-bordered table-responsive">
+    <tr>
+        <th>#</th>
+        <th>Fatura Seri - Sıra No</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+        <th>Toplam</th>
+        <th>Güncelle</th>
+        <th>Teslim Detayları</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.FaturaSeriNo @item.FaturaSıraNo</td>
+            <td>@Convert.ToDateTime(item.Tarih).ToString("dd/MM/yyyy")</td>
+            <td>@item.Saat</td>
+            <td>@item.Toplam ₺</td>
+   
+            <td>
+                <a href="/Faturalar/FaturalarGuncelle/@item.FaturaID" class="btn btn-outline-info"><i class="fa fa-recycle"></i> Güncelle</a>
+            </td>
+            <td>
+                <a href="/Faturalar/FaturaDetay/@item.FaturaID" class="btn btn-outline-primary"><i class="fa fa-eye"></i></a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Faturalar/FaturaEkle" class="btn btn-outline-success">Yeni Fatura Ekle</a>
+<br /> <br />
+<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#Modal1">Fatura Ek Bilgiler</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Popup Diyalog Ekranı</h2>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <td>Vergi Dairesi</td>
+                        <td>Teslim Eden</td>
+                        <td>Teslim Alan</td>
+                    <tr>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        countt++;
+                <tr>
+                    <td>@countt</td>
+                    <td>@item.VergiDairesi</td>
+                    <td>@item.TeslimEden</td>
+                    <td>@item.TeslimAlan</td>
+                </tr>
+                    }
+                </table>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Tamam</button>
+            </div>
+        </div>
+    </div>
+
+</div>

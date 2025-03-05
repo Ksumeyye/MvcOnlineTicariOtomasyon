@@ -1,0 +1,37 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urunler
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Ürün Ekleme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    <label><h4>Ürün Adı</h4></label>
+    @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+    <br />
+    <label><h4>Marka</h4></label>
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+    <label><h4>Stok</h4></label>
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+    <label><h4>Alış Fiyatı</h4></label>
+    @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+    <br />
+    <label><h4>Satış Fiyatı</h4></label>
+    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+    <br />
+    <label><h4>Kategori</h4></label>
+    @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.kategori, "Kategoriyi Seçiniz", new { @class = "form-control" })
+    <br />
+    <label><h4>Ürün Görseli</h4></label>
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control"})
+    <br />
+    <label><h4>Durum</h4></label>
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary"><i class="fa fa-save"></i> Kaydet</button>
+</form>
+

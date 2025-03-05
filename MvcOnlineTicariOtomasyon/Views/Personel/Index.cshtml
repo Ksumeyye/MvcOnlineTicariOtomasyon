@@ -1,0 +1,45 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h3>Personeller</h3>
+<br/>
+@{
+    int count = 0;
+}
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th>
+            <th>Personel Adı</th>
+            <th>Personel Soyadı</th>
+            <th>Personel Profil</th>
+            <th>Departman</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.PersonelAd</td>
+                <td>@item.PersonelSoyad</td>
+                <td><img src="@item.PersonelGorsel" style="height: 50px; width: 50px; border-radius:50%;" /></td>
+                <td>@item.Departman.DepartmanAd</td>
+                <td>
+                    <a href="/Personel/PersonelGetir/@item.PersonelID" class="btn btn-outline-info"><i class="fa fa-recycle"></i> Güncelle</a>
+                </td>
+                <td>
+                    <a href="/Departman/DepartmanPersonelSatis/@item.PersonelID" class="btn btn-outline-primary"><i class="fa fa-eye"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Personel/PersonelEkle" class="btn btn-outline-success"> Yeni Personel Ekle</a>

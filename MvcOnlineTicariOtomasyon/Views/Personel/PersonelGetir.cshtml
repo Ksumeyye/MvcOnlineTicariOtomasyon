@@ -1,0 +1,28 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Personel Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))//new {enctype="multipart/form-data"} dosya eklemek için kullanılır.
+{ 
+    <form class="form-group" method="post">
+        @Html.HiddenFor(x => x.PersonelID)
+        <label><h4>Personel Adı</h4></label>
+        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+        <br />
+        <label><h4>Personel Soyadı</h4></label>
+        @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+        <label><h4>Personel Profil</h4></label>
+        <br />
+        <input type="file" name="PersonelGorsel"/>
+        @*@Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })*@
+        <br />
+        <label><h4>Departman </h4></label>
+        @Html.DropDownListFor(x => x.Departman.DepartmanAd, (List<SelectListItem>)ViewBag.Departman, "Departmanı Seçiniz", new { @class = "form-control" })
+        <br />
+        <button class="btn btn-outline-primary"><i class="fa fa-save"></i> Kaydet</button>
+    </form>
+}

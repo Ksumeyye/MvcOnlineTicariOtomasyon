@@ -1,0 +1,47 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
+@model List<Cariler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h3>Cariler</h3>
+<br />
+@{
+    int count = 0;
+}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Cari Adı</th>
+            <th>Cari Soyadı</th>
+            <th>Şehir</th>
+            <th>Mail</th>
+            <th>İşlemler</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.CariAd</td>
+                <td>@item.CariSoyad</td>
+                <td>@item.CariSehir</td>
+                <td>@item.CariMail</td>
+                <td>
+                    <a href="/Cariler/CariSil/@item.CariID" class="btn btn-outline-danger"><i class="fa fa-trash"></i> Sil</a>
+                    <a href="/Cariler/CariGuncelle/@item.CariID" class="btn btn-outline-info"><i class="fa fa-recycle"></i> Güncelle</a>
+                </td>
+                <td>
+                    <a href="/Cariler/CariDetay/@item.CariID" class="btn btn-outline-primary"><i class="fa fa-eye"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+    <a href="/Cariler/CariEkle" class="btn btn-outline-success">Cari Ekle</a>
+

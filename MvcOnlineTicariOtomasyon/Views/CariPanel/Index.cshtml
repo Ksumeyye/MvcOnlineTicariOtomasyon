@@ -1,0 +1,36 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+<br />
+<h3>Online Ticari Otomasyon Cari Bilgi Paneli</h3>
+
+@using(Html.BeginForm("Index2","CariPanel",FormMethod.Post))
+            {
+    <table class="table table-bordered">
+        <tr>
+            <td>
+                <label>Mail Adresi: @HttpContext.Current.User.Identity.Name</label>
+                <!--: Razor sözdiziminde, C# kodunu HTML içinde çalıştırmak için  sembolü kullanılır.
+            HttpContext.Current: Bu, mevcut HTTP isteğiyle ilgili verilere erişimi sağlayan bir nesnedir. Yani, bu nesne üzerinden, uygulamanın o anki oturumu, kullanıcı bilgileri gibi verilere ulaşabilirsiniz.
+            User: Bu, mevcut kullanıcının bilgilerine erişim sağlar. User, kullanıcıyı temsil eden bir nesnedir.
+            Identity: Bu, kullanıcının kimlik bilgilerine erişim sağlar. Kullanıcının kimliği doğrulandıysa (örneğin, giriş yaptıysa), bu nesne içinde kullanıcıya ait bilgiler bulunur.
+            Name: Bu, kullanıcının kimlik bilgileri arasında yer alan adı veya kullanıcı adıdır. Çoğunlukla, giriş yapan kullanıcının e-posta adresini veya kullanıcı adını alır.-->
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.CariSifre, new { @class = "form-control" })</td>
+        </tr>
+    </table>
+    <button class="btn btn-outline-primary">Bilgilerimi Güncelle</button>
+            }

@@ -1,0 +1,24 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "CariEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3>Cari Ekleme Sayfası</h3>
+<br />
+<form class="form-group" method="post">
+    <label><h4>Cari Adı</h4></label>
+    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+    <br />
+    <label><h4>Cari Soyadı</h4></label>
+    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+    <br />
+    <label><h4>Şehir</h4></label>
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    <br />
+    <label><h4>Mail</h4></label>
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary"><i class="fa fa-save"></i> Kaydet</button>
+</form>

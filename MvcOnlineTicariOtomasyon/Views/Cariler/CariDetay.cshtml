@@ -1,0 +1,48 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "CariDetay";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Cariler Detay Sayfası</h2>
+<br />
+@{
+    int count = 0;
+}
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Cari Adı: @ViewBag.criad</li>
+</ol>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Alınan Ürünün Markası</th>
+            <th>Alınan Ürünün Adı</th>
+            <th>Alınan Tarih</th>
+            <th>Alınan Ürünün Adeti</th>
+            <th>Toplam Tutar</th>
+            <th>İlgilenen Personel Ad ve Soyad</th>
+            <th>İlgilenen Personelin Profili</th>
+            <th>Yazdır</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.Urunler.Marka</td>
+                <td>@item.Urunler.UrunAd</td>
+                <td>@item.Tarih</td>
+                <td>@item.Adet</td>
+                <td>@item.ToplamTutar</td>
+                <td>@item.Personel.PersonelAd @item.Personel.PersonelSoyad</td>
+                <td><img src="@item.Personel.PersonelGorsel" style="height:50px; width:50px" /></td>
+                <td><a href="#" class="btn btn-default" style="background-color:dodgerblue"><i class="fa fa-print"></i></a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
