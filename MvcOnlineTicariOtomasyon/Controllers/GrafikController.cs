@@ -84,5 +84,34 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             });
             return snf;
         }
+        public ActionResult Index5() 
+        {
+            return View();
+        }
+        public ActionResult VisualizeUrunResult2()
+        {
+            return Json(UrunListesi2(), JsonRequestBehavior.AllowGet); //Google charttaki ürün görselliğine ulaşabilmek için uyguladım.
+        }
+        public List<Sinif2> UrunListesi2() //UrunListesi2 adlı bir metodu içeriyor ve bu metodun amacı, veritabanında bulunan Urunler adlı bir tablodan verileri çekmek ve bunları bir listeye (List) dönüştürmek.
+        {
+            List<Sinif2> snf = new List<Sinif2>(); //Burada snf adında bir liste oluşturuluyor. Bu liste, Sinif2 tipinde nesneler tutacak. Başlangıçta boş bir liste oluşturuluyor.
+            using (var context = new Context()) //Veritabanıyla bağlantı kurmak için context kullandım. using anahtar kelimesi, context nesnesinin işini bitirdikten sonra düzgün bir şekilde temizlenmesini ve kapatılmasını sağlar. Bu, bellek sızıntılarının ve bağlantı sorunlarının önüne geçmek için önemlidir.
+            {
+                snf=c.Urunlers.Select(x=>new Sinif2
+                {
+                    urn = x.UrunAd,
+                    stk = x.Stok
+                }).ToList();
+            }//using bloğunun sonu. Bu blok tamamlandığında, context nesnesi otomatik olarak kapanacak ve veritabanı bağlantısı sonlandırılacaktır.
+            return snf;
+        }
+        public ActionResult Index6()
+        {
+            return View();
+        }
+        public ActionResult Index7()
+        {
+            return View();
+        }
     }
 }
