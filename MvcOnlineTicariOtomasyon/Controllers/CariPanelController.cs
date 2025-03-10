@@ -34,6 +34,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d1 = gelensayisi;
             return View(mesajlar);
         }
+        public ActionResult GidenMesajlar()
+        {
+            var mail=(string)Session["PersonelMail"];
+            var mesajlar = c.Mesajlars.Where(x => x.Gonderici == mail).ToList();
+            var gidensayisi = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.d2 = gidensayisi;
+            return View(mesajlar);
+        }
         [HttpGet]
         public ActionResult YeniMesaj()
         {
