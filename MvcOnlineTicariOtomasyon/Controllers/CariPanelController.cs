@@ -26,5 +26,26 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var degerler = c.SatisHarekets.Where(x => x.Cariid == id).ToList();
             return View(degerler);
         }
+        public ActionResult GelenMesajlar()
+        {
+            var mail = (string)Session["CariMail"];
+            var mesajlar = c.Mesajlars.Where(x=>x.Alici==mail).ToList();
+            var gelensayisi=c.Mesajlars.Count(x=>x.Alici==mail).ToString();
+            ViewBag.d1 = gelensayisi;
+            return View(mesajlar);
+        }
+        [HttpGet]
+        public ActionResult YeniMesaj()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniMesaj(Mesajlar m)
+        {
+            m.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            c.Mesajlars.Add(m);
+            c.SaveChanges();
+            return View();
+        }
     }
 }
