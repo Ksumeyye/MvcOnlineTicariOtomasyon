@@ -1,0 +1,49 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
+@model List<KargoDetay>
+@{
+    ViewBag.Title = "KargoTakip";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+<h2>Kargo Takip Sayfası</h2>
+<!--Arama İçin-->
+@using (Html.BeginForm("KargoTakip", "CariPanel", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarası: @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+<br />
+@{
+    int count = 0;
+}
+<br />
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Personel</th>
+        <th>Alıcı</th>
+        <th>Takip Kodu</th>
+        <th>Tarih</th>
+        <th>Kargo Takip</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.Personel</td>
+            <td>@item.Alici</td>
+            <td>@item.Tarih</td>
+            <td>@item.TakipKodu</td>
+            <td>
+                <a href="/CariPanel/CariKargoTakip/@item.TakipKodu" class="btn btn-outline-primary"><i class="fa fa-eye"></i></a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<br />
+<a href="/QR/Index/" class="btn btn-default" style="background-color:mediumseagreen"><b style="background-color:lawngreen">QR Kod Görüntüle </b></a>
+

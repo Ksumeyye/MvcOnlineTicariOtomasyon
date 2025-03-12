@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
@@ -19,6 +20,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.m = mail;
             return View(degerler); //u metod, kullanıcının oturumunda saklanan e-posta adresini alır, bu e-posta adresiyle ilgili müşteri verisini bulur ve o veriyi View'a (sayfaya) gönderir.
         }
+        [Authorize]
         public ActionResult Siparislerim()
         {
             var mail = (string)Session["CariMail"];
@@ -26,6 +28,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var degerler = c.SatisHarekets.Where(x => x.Cariid == id).ToList();
             return View(degerler);
         }
+        [Authorize]
         public ActionResult GelenMesajlar()
         {
             var mail = (string)Session["CariMail"];
@@ -36,6 +39,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View(mesajlar);
         }
+        [Authorize]
         public ActionResult GidenMesajlar()
         {
             var mail=(string)Session["PersonelMail"];
@@ -47,6 +51,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View(mesajlar);
         }
         [HttpGet]
+        [Authorize]
         public ActionResult YeniMesaj()
         {
             var mail = (string)Session["PersonelMail"];
@@ -58,6 +63,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             return View();
         }
         [HttpPost]
+        [Authorize]
         public ActionResult YeniMesaj(Mesajlar m)
         {
             var mail = (string)Session["PersonelMail"];
@@ -67,6 +73,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             c.SaveChanges();
             return View();
         }
+        [Authorize]
         public ActionResult MesajDetay(int id)
         {
             var degerler = c.Mesajlars.Where(x => x.MesajID == id).ToList();
@@ -77,5 +84,26 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View(degerler);
         }
+        [Authorize]
+        public ActionResult KargoTakip(string p)
+        {
+            var kargolar = from x in c.KargoDetays select x;
+            kargolar = kargolar.Where(y => y.TakipKodu.Contains(p));    
+            return View(kargolar.ToList());
+        }
+        [Authorize]
+        public ActionResult CariKargoTakip(string id)
+        {
+            var ktakip = c.KargoTakips.Where(x => x.TakipKodu == id).ToList();
+            return View(ktakip);
+        }
+        [Authorize]
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon(); //Oturumu sonlandırır.
+            return RedirectToAction("Index", "Login");
+        }
+
     }
 }
