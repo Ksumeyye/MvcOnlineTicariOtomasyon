@@ -16,8 +16,20 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CariMail"];
-            var degerler = c.Carilers.FirstOrDefault(x => x.CariMail == mail);
+            var degerler = c.Mesajlars.Where(x => x.Alici == mail).ToList();
             ViewBag.m = mail;
+            var mailid = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariID).FirstOrDefault();
+            ViewBag.mid = mailid;
+            var toplamsatis = c.SatisHarekets.Where(x => x.Cariid == mailid).Count();
+            ViewBag.toplamsatis = toplamsatis;
+            var toplamtutar = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => y.ToplamTutar);
+            ViewBag.toplamtutar = toplamtutar;
+            var toplamurunsayisi = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(z => z.Adet);
+            ViewBag.toplamurunsayisi = toplamurunsayisi;
+            var adsoyad = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.adsoyad = adsoyad;
+            var mailadres = c.Carilers.Where(x => x.CariMail == mail).Select(z => z.CariMail).FirstOrDefault();
+            ViewBag.mailadres = mailadres;
             return View(degerler); //u metod, kullanıcının oturumunda saklanan e-posta adresini alır, bu e-posta adresiyle ilgili müşteri verisini bulur ve o veriyi View'a (sayfaya) gönderir.
         }
         [Authorize]
