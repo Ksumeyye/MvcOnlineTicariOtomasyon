@@ -116,6 +116,12 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             Session.Abandon(); //Oturumu sonlandırır.
             return RedirectToAction("Index", "Login");
         }
-
+        public PartialViewResult Partial1()
+        {
+            var mail = (string)Session["CariMail"];
+            var id = c.Carilers.Where(x => x.CariMail == mail.ToString()).Select(y => y.CariID).FirstOrDefault();
+            var caribul = c.Carilers.Find(id);
+            return PartialView("Partial1", caribul);
+        }
     }
 }
