@@ -139,10 +139,13 @@
                             <div class="sb-nav-link-icon"><i class="fa fa-camera"></i></div>
                             Galeri
                         </a>
-                        <a class="nav-link" href="/Istatistik/KolayTablolar/">
-                            <div class="sb-nav-link-icon"><i class="fa fa-signal"></i></div>
-                            Hızlı Bakış
-                        </a>
+                        @if (User.IsInRole("A"))
+                        {
+                            <a class="nav-link" href="/Istatistik/KolayTablolar/">
+                                <div class="sb-nav-link-icon"><i class="fa fa-signal"></i></div>
+                                Hızlı Bakış
+                            </a>
+                        }
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
