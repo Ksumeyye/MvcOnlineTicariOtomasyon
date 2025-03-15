@@ -8,6 +8,7 @@ using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [AllowAnonymous] //Yetki Sınırlaması Burası Hariç
     public class LoginController : Controller
     {
         // GET: Login
@@ -61,7 +62,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             {
                 FormsAuthentication.SetAuthCookie(bilgiler.KullaniciAd, false);
                 Session["KullaniciAd"] = bilgiler.KullaniciAd.ToString();
-                return RedirectToAction("Index", "Istatistik");
+                return RedirectToAction("Index", "Personel");
             }
             else
             {
