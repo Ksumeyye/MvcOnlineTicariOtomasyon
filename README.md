@@ -19,7 +19,7 @@ Bu MVC tabanlı Online Ticaret Otomasyonu projem, bir mağazanın vitrin,admin v
 #File Upload ile Personellere Resim Ekleme<br>
 #Alert ve Sweet Alert Kullanımı <br>
 #QR Code İşlemleri<br>
-#Pie,Line, Column Chart Kullanımı <br>
+#Pie,Line, Column Chart, Widget Card kullanımları <br>
 #Hata Sayfaları <br>
 #LogOut 
 
