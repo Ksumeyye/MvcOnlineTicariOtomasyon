@@ -26,7 +26,7 @@
             <td>@item.KategoriAd</td>
             <td>
                 <a href="/Kategori/KategoriSil/@item.KategoriID" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
-         
+
                 <a href="/Kategori/KategoriGuncelle/@item.KategoriID" class="btn btn-outline-info"><i class="fa fa-recycle"></i> </a>
 
             </td>
@@ -34,10 +34,11 @@
     }
 </table>
 <br />
-@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new {sayfa}),
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }),
 new PagedListRenderOptions
 {
-    LiElementClasses=new List<string>
+    LiElementClasses = new List<string>
     { "page-link"}
 })
-<a href="/Kategori/KategoriEkle" class="btn btn-outline-success"> Yeni Kategori Ekle</a>
+<a href="/Kategori/KategoriEkle" class="btn btn-outline-success"> Yeni Kategori Ekle</a>  <a href="/Kategori/KategoriFiltreleme" style="background-color:lime; color: black;" class="color5" > Kategori - Ürün Filtreleme</a>
+
