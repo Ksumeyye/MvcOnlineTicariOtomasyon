@@ -20,7 +20,7 @@ Bu MVC tabanlı Online Ticaret Otomasyonu projem, bir mağazanın vitrin,admin v
 #Alert ve Sweet Alert Kullanımı <br>
 #QR Code İşlemleri<br>
 #Pie,Line, Column Chart Kullanımı <br>
-# Hata Sayfaları <br>
+#Hata Sayfaları <br>
 #LogOut 
 
 
