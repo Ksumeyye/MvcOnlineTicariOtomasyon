@@ -106,5 +106,11 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index","SatisHareket");
         }
+        public ActionResult UrunDetayy(int id)
+        {
+            var degerler = c.Urunlers.Where(x => x.UrunID == id).ToList();
+            return View(degerler);
+        }
+
     }
 }

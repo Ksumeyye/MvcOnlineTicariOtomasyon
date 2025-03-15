@@ -27,6 +27,13 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string UrunGorsel { get; set; }
+        public string UrunGorsel1 { get; set; }
+        public string UrunGorsel2 { get; set; }
+        public string UrunGorsel3 { get; set; }
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(2000)]
+        public string urunBilgi { get; set; }
         public int Kategoriid { get; set; }   
         public virtual Kategori Kategori { get; set; } //Kategori sınıfına bağlı olan bir tane property(Sütun) oluşturdum.
         public ICollection<SatisHareket> SatisHarekets  { get; set; }

@@ -228,6 +228,12 @@
     <Content Include="AdminLTE-3.0.4\dist\img\avatar5.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\boxed-bg.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\boxed-bg.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\CamasirMak1.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\CamasirMak2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\CamasirMak3.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Cay1.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Cay2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Cay3.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\credit\american-express.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\credit\cirrus.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\credit\mastercard.png" />
@@ -238,8 +244,30 @@
     <Content Include="AdminLTE-3.0.4\dist\img\Customer.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\Customer1.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\default-150x150.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Dyson1.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Dyson2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Dyson3.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Firin1.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Firin2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Firin3.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Firin4.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\icons.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\IdeaPad2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\IdeaPad3.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Idepad1.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Iphone1.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Iphone2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Iphone3.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Kulaklik1.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Kulaklik2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Kulaklik3.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\LG1.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\LG2.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\LG3.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\message.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Okka1.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Okka2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Okka3.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo1.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo2.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo3.jpg" />
@@ -249,6 +277,12 @@
     <Content Include="AdminLTE-3.0.4\dist\img\prod-3.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\prod-4.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\prod-5.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Shaken1.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Shaken2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Shaken3.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\SupurgePhilips1.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\SupurgePhilips2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\SupurgePhilips3.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user1-128x128.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user2-160x160.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user3-128x128.jpg" />
@@ -257,6 +291,9 @@
     <Content Include="AdminLTE-3.0.4\dist\img\user6-128x128.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user7-128x128.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user8-128x128.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Utu1.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Utu2.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\Utu3.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\js\adminlte.js" />
     <Content Include="AdminLTE-3.0.4\dist\js\adminlte.min.js" />
     <Content Include="AdminLTE-3.0.4\dist\js\demo.js" />
@@ -2971,6 +3008,7 @@
     <Content Include="Views\CariPanel\CariKargoTakip.cshtml" />
     <Content Include="Views\CariPanel\Partial1.cshtml" />
     <Content Include="Views\CariPanel\Partial2.cshtml" />
+    <Content Include="Views\Urun\UrunDetayy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
