@@ -56,12 +56,12 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var deger14=c.SatisHarekets.Sum(x => x.ToplamTutar);
             ViewBag.d14 = deger14;
 
-            DateTime bugun= DateTime.Today;
-            var deger15 = c.SatisHarekets.Where(x => x.Tarih == bugun).Sum(y=>y.Adet).ToString();
-            ViewBag.d15 = deger15;
+            //DateTime bugun= DateTime.Today;
+            //var deger15 = c.SatisHarekets.Where(x => x.Tarih == bugun).Sum(y=>y.Adet).ToString();
+            //ViewBag.d15 = deger15;
 
-            var deger16 = c.SatisHarekets.Where(x => x.Tarih == bugun).Sum(y => (decimal?)y.ToplamTutar).ToString(); //Tarihi bugun olan satışların toplam tutarını bana getir.
-            ViewBag.d16 = deger16;
+            //var deger16 = c.SatisHarekets.Where(x => x.Tarih == bugun).Sum(y => (decimal?)y.ToplamTutar).ToString(); //Tarihi bugun olan satışların toplam tutarını bana getir.
+            //ViewBag.d16 = deger16;
             return View();
         }
         public ActionResult KolayTablolar()
